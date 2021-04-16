@@ -1,23 +1,29 @@
-import logo from "./logo.svg";
 import "./App.css";
+import FoodNameSearch from './components/FoodNameSearch';
+import FoodIngredientSearch from './components/FoodIngredientSearch';
+import CocktailNameSearch from './components/CocktailNameSearch';
+import CocktailIngredientSearch from './components/CocktailIngredientSearch';
+import RandomFoodCocktail from './components/RandomFoodCocktail';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Assignment 6 - Endangered Animals or Song Lyrics?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="container p-5 text-orange-900">
+          <h1 className="text-5xl">The Meal Deal</h1>
+          <h3 className="text-l">
+            Brought to you by The Meal DB
+            <br /> and the Foodies
+          </h3>
+        </div>
       </header>
+      <body>
+        <FoodNameSearch />
+        <FoodIngredientSearch />
+        <CocktailNameSearch />
+        <CocktailIngredientSearch />
+        <RandomFoodCocktail />
+      </body>
     </div>
   );
 }
