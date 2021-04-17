@@ -47,19 +47,32 @@ class FoodNameSearch extends React.Component {
       return <div>No results.</div>;
     } else {
       table = data.meals.map(function (meal) {
+        let youtubeLink =
+          "https://www.youtube.com/embed/" + meal.strYoutube.slice(-11);
         return (
           <>
             <div className="border-2 border-black grid grid-cols-10 width p-5 gap-2">
-              <div className="p-1 border-2 col-span-1 row-span-2">
+              <div className="p-1 border-2 col-span-2 row-span-4 justify-center items-center flex">
                 <img src={meal.strMealThumb} alt={meal.strMeal} />
               </div>{" "}
-              <div className="font-bold p-1 border-2 col-span-9 justify-center items-center flex">
+              <div className="font-bold p-1 border-2 row-span-2 col-span-4 justify-center items-center flex">
                 {meal.strMeal}
               </div>
-              <div className="font-bold p-1 border-2 col-span-1  justify-center items-center flex">
+              <div className="px-2 py-1 border-2 text-left row-span-4 col-span-4 justify-center items-center flex">
+                <iframe
+                  width="560"
+                  height="315"
+                  src={youtubeLink}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div className="font-bold p-1 border-2 col-span-1 row-span-2 justify-center items-center flex">
                 Cuisine
               </div>{" "}
-              <div className="p-1 border-2 col-span-8 justify-center items-center flex">
+              <div className="p-1 border-2 col-span-3 row-span-2 justify-center items-center flex">
                 {meal.strArea}
               </div>
               <div className="font-bold p-1 border-2 col-span-1 justify-center items-center flex">
@@ -67,12 +80,6 @@ class FoodNameSearch extends React.Component {
               </div>{" "}
               <div className="px-2 py-1 border-2 text-left col-span-9 justify-center items-center flex">
                 {meal.strInstructions}
-              </div>
-              <div className="font-bold p-1 border-2 col-span-1 justify-center items-center flex">
-                Recipe Video
-              </div>{" "}
-              <div className="px-2 py-1 border-2 text-left col-span-9 justify-center items-center flex">
-                <div className="hover:text-gray-500"><a href={meal.strYoutube}>{meal.strYoutube}</a></div>
               </div>
             </div>
             <br />
