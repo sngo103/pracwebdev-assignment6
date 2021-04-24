@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 
+
 class FoodNameSearch extends React.Component {
   constructor(props){
     super(props);
@@ -10,15 +11,17 @@ class FoodNameSearch extends React.Component {
         found: false
     }
 }
+
 handleInputChange = (event) => {
   this.setState({meal: event.target.value});
 }
 handleSearchClick = async () => {
   let mealName = this.state.meal;
-  let linkToAPI = 'https://www.themealdb.com/api/json/v1/1/search.php?s='+ mealName;
+  let linkToAPI = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + mealName;
 
   try {
       let response = await axios.get(linkToAPI);
+      console.log(response.data);
       this.setState({apiData: response.data, found: true});
   } catch (error) {
       if (error.response) {
@@ -33,11 +36,36 @@ handleSearchClick = async () => {
  
   }
 }
+    // handleSearchClick = () => {
+    //     let mealName = this.state.meal;
+    //     let linkToAPI = 'https://www.themealdb.com/api/json/v1/1/search.php?s='+mealName;
+    //     fetch(linkToAPI)
+    //     .then(res => res.json())
+    //     .then(
+    //       (result) => {
+    //         this.setState({
+    //           isLoaded: true,
+    //           items: result.items
+    //         });
+    //       },
+    //       // Note: it's important to handle errors here
+    //       // instead of a catch() block so that we don't swallow
+    //       // exceptions from actual bugs in components.
+    //       (error) => {
+    //         this.setState({
+    //           isLoaded: true,
+    //           error
+    //         });
+    //       }
+    //     )
+    // }
+
 makeTable = () => {
   let currData = this.state.apiData;
   let foundMatch = this.state.found;
   let table = [];
   //found is false when we get 404 error
+  console.log("Hiiii");
   if(!foundMatch){
       table.push(<tr key={-1}><td>No Results</td></tr>);
       return table;
@@ -65,7 +93,7 @@ makeTable = () => {
               className="rounded-md px-2 py-1 my-1 border-black border-2 text-green-900 text-opacity-30"
               type="text"
               value={this.state.meal}
-              onChange={this.handleInputChange}
+              onChange={(event)=>this.handleInputChange(event)}
               placeholder="Enter Meal"
             />
             <br />
@@ -74,7 +102,6 @@ makeTable = () => {
               //type="submit"
               onClick={this.handleSearchClick}
             >
-              
               Submit
             </button>
           </form>
