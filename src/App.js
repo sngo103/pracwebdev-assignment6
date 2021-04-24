@@ -9,11 +9,12 @@ function App() {
   return (
     <div className="App">
       <header>
-        <div className="container p-5 text-orange-900">
+        <div className="container p-5 text-yellow-500">
           <h1 className="text-5xl">The Meal Deal</h1>
           <h3 className="text-l">
             Brought to you by The Meal DB
-            <br /> and the Foodies
+            <br /> and the Foodies <br />
+            Samantha Ngo, Gabby Gonzalez, Kristy Lau, & Nirmala Kuhl
           </h3>
         </div>
       </header>
