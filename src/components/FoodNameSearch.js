@@ -18,13 +18,12 @@ class FoodNameSearch extends React.Component {
   };
 
   handleSearchClick = async (event) => {
-    event.preventDefault();
     console.log("Running handleSearchClick...");
     let mealName = this.state.meal;
     let linkToAPI =
       "https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealName;
 
-    const response = await axios
+    await axios
       .get(linkToAPI)
       .then((res) => {
         console.log("DATA:", res.data);
@@ -43,7 +42,7 @@ class FoodNameSearch extends React.Component {
     let foundMatch = this.state.found;
     let table = [];
     //found is false when we get 404 error
-    if (!foundMatch) {
+    if (!foundMatch || !data.meals) {
       return <div>No results.</div>;
     } else {
       table = data.meals.map(function (meal) {
@@ -103,7 +102,7 @@ class FoodNameSearch extends React.Component {
               type="text"
               value={this.state.meal}
               onChange={this.handleInputChange}
-              placeholder="Enter Meal"
+              placeholder="Enter dish..."
             />
             <br />
             <button

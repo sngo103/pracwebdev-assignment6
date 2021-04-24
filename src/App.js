@@ -13,7 +13,8 @@ function App() {
           <h1 className="text-5xl">The Meal Deal</h1>
           <h3 className="text-l">
             Brought to you by The Meal DB
-            <br /> and the Foodies
+            <br /> and the Foodies <br />
+            Samantha Ngo, Gabby Gonzalez, Kristy Lau, & Nirmala Kuhl
           </h3>
         </div>
       </header>
