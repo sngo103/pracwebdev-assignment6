@@ -18,6 +18,7 @@ class CocktailNameSearch extends React.Component {
   };
 
   handleSearchClick = async (event) => {
+    event.preventDefault();
     console.log("Running handleSearchClick...");
     let cocktailName = this.state.cocktail;
     let linkToAPI =
@@ -42,40 +43,26 @@ class CocktailNameSearch extends React.Component {
     let foundMatch = this.state.found;
     let table = [];
     //found is false when we get 404 error
-    if (!foundMatch || !data.cocktails) {
+    if (!foundMatch || !data.drinks) {
       return <div>No results.</div>;
     } else {
-      table = data.cocktails.map(function (cocktail) {
-        let youtubeLink =
-          "https://www.youtube.com/embed/" + cocktail.strYoutube.slice(-11);
+      table = data.drinks.map(function (cocktail) {
+        
         return (
           <>
             <div className="border-2 border-black grid grid-cols-10 width p-5 gap-2">
               <div className="p-1 border-2 col-span-2 row-span-4 justify-center items-center flex">
-                <img src={cocktail.strImageSource} alt={cocktail.strDrink} />
+                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
               </div>{" "}
-              <div className="font-bold p-1 border-2 row-span-2 col-span-4 justify-center items-center flex">
+              <div className="font-bold p-1 border-2 row-span-4 col-span-4 justify-center items-center flex">
                 {cocktail.strDrink}
               </div>
-              <div className="px-2 py-1 border-2 text-left row-span-4 col-span-4 justify-center items-center flex">
-                <iframe
-                  width="560"
-                  height="315"
-                  src={youtubeLink}
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="font-bold p-1 border-2 col-span-1 row-span-2 justify-center items-center flex">
-                Cuisine
+              
+              <div className="font-bold p-1 border-2 col-span-4 row-span-4 justify-center items-center flex">
+                Category: {cocktail.strCategory}
               </div>{" "}
-              <div className="font-bold p-1 border-2 col-span-1 justify-center items-center flex">
-                Recipe
-              </div>{" "}
-              <div className="px-2 py-1 border-2 text-left col-span-9 justify-center items-center flex">
-                {cocktail.strInstructions}
+              <div className="px-2 py-1 border-2 text-left col-span-10 justify-center items-center flex">
+                Recipe: {cocktail.strInstructions}
               </div>
             </div>
             <br />
