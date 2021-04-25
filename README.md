@@ -9,8 +9,8 @@
   - [ ] Designed UI for displaying results
 - Samantha: 
   - [x] Designed UI with TailwindCSS and set up forms
-  - [ ] API call for "Search for a dish by ingredient"
-  - [ ] Designed UI for displaying results
+  - [x] API call for "Search for a dish by ingredient"
+  - [x] Designed UI for displaying results
 - Nirmala: 
   - [ ] API call for "Search for a cocktail by name"
   - [ ] API call for "Can't Decide, Choose for Me" - Random dish
