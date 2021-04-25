@@ -18,6 +18,7 @@ class FoodIngredientSearch extends React.Component {
   };
 
   handleClick = async (event) => {
+    event.preventDefault()
     console.log("Running handleSearchClick...");
     let ingredient = this.state.ingredient;
     let linkToAPI =
