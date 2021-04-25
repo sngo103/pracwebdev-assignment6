@@ -18,6 +18,7 @@ class CocktailIngredientSearch extends React.Component {
   };
 
   handleClick = async (event) => {
+    event.preventDefault();
     console.log("Running handleSearchClick...");
     let ingredient = this.state.ingredient;
     let linkToAPI =
@@ -41,16 +42,16 @@ class CocktailIngredientSearch extends React.Component {
     let data = this.state.apiData;
     let foundMatch = this.state.found;
     let table = [];
-    if (!foundMatch || !data.cocktails) {
+    if (!foundMatch || !data.drinks) {
       return <div>No results.</div>;
     } else {
-      table = data.cocktails.map(function (cocktail) {
+      table = data.drinks.map(function (cocktail) {
         console.log("DRINK:", cocktail)
         return (
           <>
             <div className="border-2 border-black grid grid-cols-10 p-1 gap-2">
               <div className="p-1 border-2 col-span-1 row-span-1">
-                <img className="transform hover:scale-150" src={cocktail.strMealThumb} alt={cocktail.strMeal} />
+                <img className="transform hover:scale-150" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
               </div>{" "}
               <div className="font-bold p-1 border-2 row-span-1 col-span-9 justify-center items-center flex">
                 {cocktail.strDrink}
@@ -68,7 +69,7 @@ class CocktailIngredientSearch extends React.Component {
     return (
       <>
         <div className="p-5 border-2">
-          Search for a drink by ingredient: <br />{" "}
+          Search for a cocktail by ingredient: <br />{" "}
           {/* www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast */}
           <form>
             <input
