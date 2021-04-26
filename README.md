@@ -12,11 +12,11 @@
   - [x] API call for "Search for a dish by ingredient"
   - [x] Designed UI for displaying results
 - Nirmala: 
-  - [ ] API call for "Search for a cocktail by name"
-  - [ ] API call for "Can't Decide, Choose for Me" - Random dish
+  - [x] API call for "Search for a cocktail by name"
+  - [x] API call for "Can't Decide, Choose for Me" - Random dish
 - Kristy: 
-  - [ ] API call for "Search for a cocktail by ingredient"
-  - [ ] API call for "Can't Decide, Choose for Me" - Random cocktail
+  - [x] API call for "Search for a cocktail by ingredient"
+  - [x] API call for "Can't Decide, Choose for Me" - Random cocktail
 ----
 - Extra(if we have time or for fun):
   - [ ] Clear Results button for each search
