@@ -6,7 +6,6 @@
 - Gabby: 
   - [x] Designed UI with TailwindCSS and set up forms
   - [x] API call for "Search for a dish by name"
-  - [ ] Designed UI for displaying results
 - Samantha: 
   - [x] Designed UI with TailwindCSS and set up forms
   - [x] API call for "Search for a dish by ingredient"
