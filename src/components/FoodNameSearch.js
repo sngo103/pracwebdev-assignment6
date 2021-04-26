@@ -13,13 +13,11 @@ class FoodNameSearch extends React.Component {
   }
 
   handleInputChange = (event) => {
-    // console.log("Changing Input...");
     this.setState({ meal: event.target.value });
   };
 
   handleSearchClick = async (event) => {
     event.preventDefault();
-    // console.log("Running handleSearchClick...");
     let mealName = this.state.meal;
     let linkToAPI =
       "https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealName;
@@ -27,8 +25,6 @@ class FoodNameSearch extends React.Component {
     await axios
       .get(linkToAPI)
       .then((res) => {
-        // console.log("DATA:", res.data);
-        // console.log("RES:", res);
         this.setState({ apiData: res.data, found: true });
       })
       .catch((error) => {
@@ -38,7 +34,6 @@ class FoodNameSearch extends React.Component {
   };
 
   makeTable = () => {
-    // console.log("Running makeTable...");
     let data = this.state.apiData;
     let foundMatch = this.state.found;
     let table = [];
@@ -96,7 +91,6 @@ class FoodNameSearch extends React.Component {
         <div className="p-5 border-2">
           Search for a dish by name:
           <br />
-          {/* www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata */}
           <form onSubmit={this.handleSearchClick}>
             <input
               className="rounded-md px-2 py-1 my-1 border-black border-2 text-green-900"

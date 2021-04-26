@@ -16,7 +16,6 @@ class RandomFoodCocktail extends React.Component {
   // When user clicks on button
   handleClick = async (event) => {
     event.preventDefault()
-    // console.log("Running handleSearchClick...");
 
     // Generating random meal
     let linkToMealAPI = 
@@ -36,8 +35,6 @@ class RandomFoodCocktail extends React.Component {
           const responseMeal = responses[1];
           this.setState({cocktailData: responseCocktail, mealData: responseMeal, found: true});
           // use/access the results 
-          // console.log("responseCocktail: ", responseCocktail);
-          // console.log("responseMeal:", responseMeal);
         })).catch(errors => {
           // react on errors.
             console.log("Error:", errors);
@@ -47,7 +44,6 @@ class RandomFoodCocktail extends React.Component {
 
   // Generating table for meal and cocktail
   makeTable = () => {
-    // console.log("Running makeTable...");
 
     let foundMatch = this.state.found;
     let table = [];
@@ -56,8 +52,6 @@ class RandomFoodCocktail extends React.Component {
       return <div>No results.</div>;
     } else {
       // Creating table
-      // console.log("COCKTAIL DATA: ", this.state.cocktailData);
-      // console.log("COCKTAIL DATA DRINKS: ", this.state.cocktailData.data.drinks);
       let cocktailDiv = this.state.cocktailData.data.drinks.map(function (cocktail) {
                       return (
                         <div className="border-2 border-black grid grid-cols-10 p-1 gap-2">
@@ -71,8 +65,6 @@ class RandomFoodCocktail extends React.Component {
                       )
                     });
 
-      // console.log("MEAL DATA: ", this.state.mealData);
-      // console.log("MEAL DATA MEALS: ", this.state.mealData.data.meals);
       
       let mealDiv = this.state.mealData.data.meals.map(function (meal) { 
                       return (
@@ -113,8 +105,6 @@ class RandomFoodCocktail extends React.Component {
               {" "}
               Let's go!
             </button>
-            {/* www.thecocktaildb.com/api/json/v1/1/random.php */}
-            {/* www.themealdb.com/api/json/v1/1/random.php */}
           </form>
         </div>
       </div>
