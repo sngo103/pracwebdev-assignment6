@@ -13,13 +13,13 @@ class FoodNameSearch extends React.Component {
   }
 
   handleInputChange = (event) => {
-    console.log("Changing Input...");
+    // console.log("Changing Input...");
     this.setState({ meal: event.target.value });
   };
 
   handleSearchClick = async (event) => {
     event.preventDefault();
-    console.log("Running handleSearchClick...");
+    // console.log("Running handleSearchClick...");
     let mealName = this.state.meal;
     let linkToAPI =
       "https://www.themealdb.com/api/json/v1/1/search.php?s=" + mealName;
@@ -27,8 +27,8 @@ class FoodNameSearch extends React.Component {
     await axios
       .get(linkToAPI)
       .then((res) => {
-        console.log("DATA:", res.data);
-        console.log("RES:", res);
+        // console.log("DATA:", res.data);
+        // console.log("RES:", res);
         this.setState({ apiData: res.data, found: true });
       })
       .catch((error) => {
@@ -38,7 +38,7 @@ class FoodNameSearch extends React.Component {
   };
 
   makeTable = () => {
-    console.log("Running makeTable...");
+    // console.log("Running makeTable...");
     let data = this.state.apiData;
     let foundMatch = this.state.found;
     let table = [];
@@ -64,9 +64,9 @@ class FoodNameSearch extends React.Component {
                   height="315"
                   src={youtubeLink}
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
               <div className="font-bold p-1 border-2 col-span-1 row-span-2 justify-center items-center flex">

@@ -13,13 +13,13 @@ class CocktailNameSearch extends React.Component {
   }
 
   handleInputChange = (event) => {
-    console.log("Changing Input...");
+    // console.log("Changing Input...");
     this.setState({ cocktail: event.target.value });
   };
 
   handleSearchClick = async (event) => {
     event.preventDefault();
-    console.log("Running handleSearchClick...");
+    // console.log("Running handleSearchClick...");
     let cocktailName = this.state.cocktail;
     let linkToAPI =
       "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + cocktailName;
@@ -27,8 +27,8 @@ class CocktailNameSearch extends React.Component {
     await axios
       .get(linkToAPI)
       .then((res) => {
-        console.log("DATA:", res.data);
-        console.log("RES:", res);
+        // console.log("DATA:", res.data);
+        // console.log("RES:", res);
         this.setState({ apiData: res.data, found: true });
       })
       .catch((error) => {
@@ -38,7 +38,7 @@ class CocktailNameSearch extends React.Component {
   };
 
   makeTable = () => {
-    console.log("Running makeTable...");
+    // console.log("Running makeTable...");
     let data = this.state.apiData;
     let foundMatch = this.state.found;
     let table = [];

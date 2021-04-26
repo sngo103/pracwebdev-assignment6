@@ -13,13 +13,13 @@ class FoodIngredientSearch extends React.Component {
   }
 
   handleInputChange = (event) => {
-    console.log("Changing Input...");
+    // console.log("Changing Input...");
     this.setState({ ingredient: event.target.value });
   };
 
   handleClick = async (event) => {
     event.preventDefault()
-    console.log("Running handleSearchClick...");
+    // console.log("Running handleSearchClick...");
     let ingredient = this.state.ingredient;
     let linkToAPI =
       "https://www.themealdb.com/api/json/v1/1/filter.php?i=" + ingredient;
@@ -27,8 +27,8 @@ class FoodIngredientSearch extends React.Component {
     const response = await axios
       .get(linkToAPI)
       .then((res) => {
-        console.log("DATA:", res.data);
-        console.log("RES:", res);
+        // console.log("DATA:", res.data);
+        // console.log("RES:", res);
         this.setState({ apiData: res.data, found: true });
       })
       .catch((error) => {
@@ -38,7 +38,7 @@ class FoodIngredientSearch extends React.Component {
   };
 
   makeTable = () => {
-    console.log("Running makeTable...");
+    // console.log("Running makeTable...");
     let data = this.state.apiData;
     let foundMatch = this.state.found;
     let table = [];
@@ -46,7 +46,7 @@ class FoodIngredientSearch extends React.Component {
       return <div>No results.</div>;
     } else {
       table = data.meals.map(function (meal) {
-        console.log("MEAL:", meal)
+        // console.log("MEAL:", meal)
         return (
           <>
             <div className="border-2 border-black grid grid-cols-10 p-1 gap-2">

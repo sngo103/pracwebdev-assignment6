@@ -6,11 +6,8 @@ class RandomFoodCocktail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //apiData: [],
       mealData: [],
       cocktailData: [],
-      //meal: "",
-      //cocktail: "",
       found: false,
       table: "",
     };
@@ -19,58 +16,16 @@ class RandomFoodCocktail extends React.Component {
   // When user clicks on button
   handleClick = async (event) => {
     event.preventDefault()
-    console.log("Running handleSearchClick...");
+    // console.log("Running handleSearchClick...");
 
     // Generating random meal
-    // let meal = this.state.meal;
     let linkToMealAPI = 
       "https://www.themealdb.com/api/json/v1/1/random.php";
     
 
     // Generating random cocktail
-    // let cocktail = this.state.cocktail;
     let linkToCocktailAPI = 
       "https://www.thecocktaildb.com/api/json/v1/1/random.php";
-
-    /*
-    const response = await axios
-      .get(linkToCocktailAPI)
-      .then((res) => {
-        console.log("DATA:", res.data);
-        console.log("RES:", res);
-        this.setState({ apiData: res.data, found: true });
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        this.setState({ found: false });
-      });
-    */
-
-    /*
-    const cocktailResponse = await axios
-      .get(linkToCocktailAPI)
-      .then((res) => {
-        console.log("COCKTAIL DATA:", res.data);
-        console.log("COCKTAIL RES:", res);
-        this.setState({ cocktailData: res.data, found: true });
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        this.setState({ found: false });
-      });
-
-    const mealResponse = await axios
-      .get(linkToMealAPI)
-      .then((res) => {
-        console.log("MEAL DATA:", res.data);
-        console.log("MEAL RES:", res);
-        this.setState({ mealData: res.data, found: true });
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        this.setState({ found: false });
-      });
-      */
 
       const requestCocktail = axios.get(linkToCocktailAPI);
       const requestMeal = axios.get(linkToMealAPI);
@@ -81,8 +36,8 @@ class RandomFoodCocktail extends React.Component {
           const responseMeal = responses[1];
           this.setState({cocktailData: responseCocktail, mealData: responseMeal, found: true});
           // use/access the results 
-          console.log("responseCocktail: ", responseCocktail);
-          console.log("responseMeal:", responseMeal);
+          // console.log("responseCocktail: ", responseCocktail);
+          // console.log("responseMeal:", responseMeal);
         })).catch(errors => {
           // react on errors.
             console.log("Error:", errors);
@@ -92,42 +47,17 @@ class RandomFoodCocktail extends React.Component {
 
   // Generating table for meal and cocktail
   makeTable = () => {
-    console.log("Running makeTable...");
+    // console.log("Running makeTable...");
 
     let foundMatch = this.state.found;
     let table = [];
-
-    // If cocktail API failed to pick a random drink
-    /*
-    if (!foundMatch || !data.drinks) {
-      return <div>No results.</div>;
-    } else {
-      // Creating table
-      table = data.drinks.map(function (cocktail) {
-        console.log("DRINK:", cocktail)
-        return (
-          <>
-            <div className="border-2 border-black grid grid-cols-10 p-1 gap-2">
-              <div className="p-1 border-2 col-span-1 row-span-1">
-                <img className="transform hover:scale-150" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-              </div>{" "}
-              <div className="font-bold p-1 border-2 row-span-1 col-span-9 justify-center items-center flex">
-                {cocktail.strDrink}
-              </div>
-            </div>
-            <br />
-          </>
-        );
-      });
-    }
-    */
 
     if (!foundMatch) {
       return <div>No results.</div>;
     } else {
       // Creating table
-      console.log("COCKTAIL DATA: ", this.state.cocktailData);
-      console.log("COCKTAIL DATA DRINKS: ", this.state.cocktailData.data.drinks);
+      // console.log("COCKTAIL DATA: ", this.state.cocktailData);
+      // console.log("COCKTAIL DATA DRINKS: ", this.state.cocktailData.data.drinks);
       let cocktailDiv = this.state.cocktailData.data.drinks.map(function (cocktail) {
                       return (
                         <div className="border-2 border-black grid grid-cols-10 p-1 gap-2">
@@ -141,8 +71,8 @@ class RandomFoodCocktail extends React.Component {
                       )
                     });
 
-      console.log("MEAL DATA: ", this.state.mealData);
-      console.log("MEAL DATA MEALS: ", this.state.mealData.data.meals);
+      // console.log("MEAL DATA: ", this.state.mealData);
+      // console.log("MEAL DATA MEALS: ", this.state.mealData.data.meals);
       
       let mealDiv = this.state.mealData.data.meals.map(function (meal) { 
                       return (
