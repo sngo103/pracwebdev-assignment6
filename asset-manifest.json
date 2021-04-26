@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/pracwebdev-assignment6/static/css/main.a84c1f9f.chunk.css",
-    "main.js": "/pracwebdev-assignment6/static/js/main.68a02f65.chunk.js",
-    "main.js.map": "/pracwebdev-assignment6/static/js/main.68a02f65.chunk.js.map",
+    "main.css": "/pracwebdev-assignment6/static/css/main.55deee92.chunk.css",
+    "main.js": "/pracwebdev-assignment6/static/js/main.66854314.chunk.js",
+    "main.js.map": "/pracwebdev-assignment6/static/js/main.66854314.chunk.js.map",
     "runtime-main.js": "/pracwebdev-assignment6/static/js/runtime-main.eebf0a48.js",
     "runtime-main.js.map": "/pracwebdev-assignment6/static/js/runtime-main.eebf0a48.js.map",
     "static/js/2.3017d373.chunk.js": "/pracwebdev-assignment6/static/js/2.3017d373.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.bedc2484.chunk.js": "/pracwebdev-assignment6/static/js/3.bedc2484.chunk.js",
     "static/js/3.bedc2484.chunk.js.map": "/pracwebdev-assignment6/static/js/3.bedc2484.chunk.js.map",
     "index.html": "/pracwebdev-assignment6/index.html",
-    "static/css/main.a84c1f9f.chunk.css.map": "/pracwebdev-assignment6/static/css/main.a84c1f9f.chunk.css.map",
+    "static/css/main.55deee92.chunk.css.map": "/pracwebdev-assignment6/static/css/main.55deee92.chunk.css.map",
     "static/js/2.3017d373.chunk.js.LICENSE.txt": "/pracwebdev-assignment6/static/js/2.3017d373.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.eebf0a48.js",
     "static/js/2.3017d373.chunk.js",
-    "static/css/main.a84c1f9f.chunk.css",
-    "static/js/main.68a02f65.chunk.js"
+    "static/css/main.55deee92.chunk.css",
+    "static/js/main.66854314.chunk.js"
   ]
 }
