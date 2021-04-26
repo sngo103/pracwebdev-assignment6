@@ -16,6 +16,7 @@ function App() {
             <br /> and the Foodies <br />
             Samantha Ngo, Gabby Gonzalez, Kristy Lau, & Nirmala Kuhl
           </h3>
+          <h3 className="font-semibold text-l">*Note: If nothing changes after hitting submit, then there are no results for that query.</h3>
         </div>
       </header>
       <body>

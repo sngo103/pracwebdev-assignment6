@@ -61,9 +61,6 @@ class CocktailNameSearch extends React.Component {
               <div className="font-bold p-1 border-2 col-span-4 row-span-4 justify-center items-center flex">
                 Category: {cocktail.strCategory}
               </div>{" "}
-              <div className="px-2 py-1 border-2 text-left col-span-10 justify-center items-center flex">
-                Recipe: {cocktail.strInstructions}
-              </div>
             </div>
             <br />
           </>
