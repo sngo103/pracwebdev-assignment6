@@ -22,5 +22,8 @@
   - [ ] Split searches into different pages
 ----
 **Link to Deployed App:** [https://sngo103.github.io/pracwebdev-assignment6/](https://sngo103.github.io/pracwebdev-assignment6/)
-**Link to TheMealDB:** [https://www.themealdb.com/api.php](https://www.themealdb.com/api.php)
-**Link to TheCocktailDB:** [https://www.thecocktaildb.com/api.php](https://www.thecocktaildb.com/api.php)
+- **Link to TheMealDB:** [https://www.themealdb.com/api.php](https://www.themealdb.com/api.php)
+- **Link to TheCocktailDB:** [https://www.thecocktaildb.com/api.php](https://www.thecocktaildb.com/api.php)
+
+Known Bugs:
+- Sometimes, results linger from the last valid query, but disappears with a few keystrokes.
