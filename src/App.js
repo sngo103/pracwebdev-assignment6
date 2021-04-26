@@ -1,9 +1,9 @@
 import "./App.css";
-import FoodNameSearch from './components/FoodNameSearch';
-import FoodIngredientSearch from './components/FoodIngredientSearch';
-import CocktailNameSearch from './components/CocktailNameSearch';
-import CocktailIngredientSearch from './components/CocktailIngredientSearch';
-import RandomFoodCocktail from './components/RandomFoodCocktail';
+import FoodNameSearch from "./components/FoodNameSearch";
+import FoodIngredientSearch from "./components/FoodIngredientSearch";
+import CocktailNameSearch from "./components/CocktailNameSearch";
+import CocktailIngredientSearch from "./components/CocktailIngredientSearch";
+import RandomFoodCocktail from "./components/RandomFoodCocktail";
 
 function App() {
   return (
@@ -16,6 +16,10 @@ function App() {
             <br /> and the Foodies <br />
             Samantha Ngo, Gabby Gonzalez, Kristy Lau, & Nirmala Kuhl
           </h3>
+          <h3 className="font-semibold text-l">
+            *Note: If nothing changes after hitting submit, then there are no
+            results for that query.
+          </h3>
         </div>
       </header>
       <body>
@@ -25,6 +29,12 @@ function App() {
         <CocktailIngredientSearch />
         <RandomFoodCocktail />
       </body>
+      <hr />
+      <br />
+      ❤️ Brought to you by Team Food: Samantha Ngo, Gabby Gonzalez, Nirmala
+      Kuhl, Kristy Lau ❤️ <br />
+      April 2021
+      <br /><br />
     </div>
   );
 }
